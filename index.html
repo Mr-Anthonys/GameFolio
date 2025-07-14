@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameFolio - Seu Diário de Jogos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .stars {
+            color: #ffd700;
+        }
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(155, 81, 224, 0.3);
+        }
+        .active-filter {
+            background-color: #6b21a8;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100 min-h-screen">
+    <!-- Navbar -->
+    <nav class="bg-gray-800 sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7b67bf7c-70f5-4aff-a1ca-98b3bf985ffc.png" alt="Ícone do GameFolio - um controle de videogame estilizado com coroa" class="h-10 w-10 rounded-full">
+                <span class="text-xl font-bold text-purple-400">GameFolio</span>
+            </div>
+            
+            <div class="hidden md:flex space-x-6">
+                <a href="#" class="hover:text-purple-300">Explorar</a>
+                <a href="#" class="hover:text-purple-300">Listas</a>
+                <a href="#" class="hover:text-purple-300">Comunidade</a>
+                <a href="#" class="hover:text-purple-300">Sobre</a>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <button class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-md font-medium">
+                    Entrar
+                </button>
+                <button class="hidden md:block bg-gray-700 hover:bg-gray-600 px-4 py-2 rounded-md font-medium">
+                    Cadastrar
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-gradient-to-r from-purple-900 to-gray-900 py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Compartilhe sua paixão por jogos</h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8">Registre, avalie e descubra novos jogos com a comunidade</p>
+            
+            <div class="max-w-xl mx-auto relative">
+                <input type="text" placeholder="Buscar jogos, usuários ou listas..." 
+                    class="w-full px-4 py-3 rounded-full bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+                <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-purple-600 hover:bg-purple-700 w-10 h-10 rounded-full flex items-center justify-center">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Filters -->
+        <div class="mb-8 overflow-x-auto">
+            <div class="flex space-x-2 pb-2">
+                <button class="px-4 py-2 bg-gray-800 rounded-full whitespace-nowrap">Todos</button>
+                <button class="px-4 py-2 bg-gray-800 rounded-full whitespace-nowrap active-filter">Populares</button>
+                <button class="px-4 py-2 bg-gray-800 rounded-full whitespace-nowrap">Recentes</button>
+                <button class="px-4 py-2 bg-gray-800 rounded-full whitespace-nowrap">PC</button>
+                <button class="px-4 py-2 bg-gray-800 rounded-full whitespace-nowrap">PlayStation</button>
+                <button class="px-4 py-2 bg-gray-800 rounded-full whitespace-nowrap">Xbox</button>
+                <button class="px-4 py-2 bg-gray-800 rounded-full whitespace-nowrap">Nintendo</button>
+                <button class="px-4 py-2 bg-gray-800 rounded-full whitespace-nowrap">Retro</button>
+            </div>
+        </div>
+
+        <!-- Featured Games -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-6">Jogos em Destaque</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                <!-- Game Card 1 -->
+                <div class="game-card bg-gray-800 rounded-lg overflow-hidden transition-transform duration-300">
+                    <div class="relative">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5e23e996-d68e-4585-ad56-a1dbfd8e7b90.png" alt="Capa do jogo Baldur's Gate 3 - arte épica medieval com personagens diversos em cenário de fantasia" class="w-full h-48 object-cover">
+                        <div class="absolute top-2 left-2 bg-purple-600 text-white text-xs px-2 py-1 rounded">
+                            RPG
+                        </div>
+                    </div>
+                    <div class="p-3">
+                        <h3 class="font-bold mb-1 truncate">Baldur's Gate 3</h3>
+                        <div class="flex justify-between items-center mb-2 text-sm">
+                            <span>2023</span>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                        <div class="flex space-x-1 text-xs">
+                            <span class="bg-gray-700 px-2 py-1 rounded">PC</span>
+                            <span class="bg-gray-700 px-2 py-1 rounded">PS5</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Game Card 2 -->
+                <div class="game-card bg-gray-800 rounded-lg overflow-hidden transition-transform duration-300">
+                    <div class="relative">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5b0cb605-672a-4c8f-9d56-ed8557dfba0c.png" alt="Capa do The Legend of Zelda: Tears of the Kingdom - Link explorando um mundo aéreo exuberante" class="w-full h-48 object-cover">
+                        <div class="absolute top-2 left-2 bg-purple-600 text-white text-xs px-2 py-1 rounded">
+                            Aventura
+                        </div>
+                    </div>
+                    <div class="p-3">
+                        <h3 class="font-bold mb-1 truncate">Zelda: Tears of the Kingdom</h3>
+                        <div class="flex justify-between items-center mb-2 text-sm">
+                            <span>2023</span>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="flex space-x-1 text-xs">
+                            <span class="bg-gray-700 px-2 py-1 rounded">Switch</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Game Card 3 -->
+                <div class="game-card bg-gray-800 rounded-lg overflow-hidden transition-transform duration-300">
+                    <div class="relative">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c5231993-31fa-42f7-b4f4-3dcd0fac8f75.png" alt="Capa de Resident Evil 4 Remake - Leon Kennedy em vila rural assustadora com atmosfera sombria" class="w-full h-48 object-cover">
+                        <div class="absolute top-2 left-2 bg-purple-600 text-white text-xs px-2 py-1 rounded">
+                            Horror
+                        </div>
+                    </div>
+                    <div class="p-3">
+                        <h3 class="font-bold mb-1 truncate">Resident Evil 4</h3>
+                        <div class="flex justify-between items-center mb-2 text-sm">
+                            <span>2023</span>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="flex space-x-1 text-xs">
+                            <span class="bg-gray-700 px-2 py-1 rounded">PC</span>
+                            <span class="bg-gray-700 px-2 py-1 rounded">PS5</span>
+                            <span class="bg-gray-700 px-2 py-1 rounded">Xbox</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Game Card 4 -->
+                <div class="game-card bg-gray-800 rounded-lg overflow-hidden transition-transform duration-300">
+                    <div class="relative">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/84c0312e-1e0c-442b-8b80-9a341d1a2d50.png" alt="Capa de Street Fighter 6 - personagens em poses dinâmicas com arte vibrante estilo grafite" class="w-full h-48 object-cover">
+                        <div class="absolute top-2 left-2 bg-purple-600 text-white text-xs px-2 py-1 rounded">
+                            Luta
+                        </div>
+                    </div>
+                    <div class="p-3">
+                        <h3 class="font-bold mb-1 truncate">Street Fighter 6</h3>
+                        <div class="flex justify-between items-center mb-2 text-sm">
+                            <span>2023</span>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                        <div class="flex space-x-1 text-xs">
+                            <span class="bg-gray-700 px-2 py-1 rounded">PC</span>
+                            <span class="bg-gray-700 px-2 py-1 rounded">PS5</span>
+                            <span class="bg-gray-700 px-2 py-1 rounded">Xbox</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Game Card 5 -->
+                <div class="game-card bg-gray-800 rounded-lg overflow-hidden transition-transform duration-300">
+                    <div class="relative">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c01563e3-3cc0-4755-ae73-8b4a8a65829a.png" alt="Capa de Super Mario Bros. Wonder - Mario e amigos em mundo colorido e surreal com efeitos psicodélicos" class="w-full h-48 object-cover">
+                        <div class="absolute top-2 left-2 bg-purple-600 text-white text-xs px-2 py-1 rounded">
+                            Plataforma
+                        </div>
+                    </div>
+                    <div class="p-3">
+                        <h3 class="font-bold mb-1 truncate">Super Mario Bros. Wonder</h3>
+                        <div class="flex justify-between items-center mb-2 text-sm">
+                            <span>2023</span>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="flex space-x-1 text-xs">
+                            <span class="bg-gray-700 px-2 py-1 rounded">Switch</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Reviews -->
+        <section>
+            <h2 class="text-2xl font-bold mb-6">Reviews Recentes</h2>
+            
+            <div class="bg-gray-800 rounded-lg p-6 mb-4">
+                <div class="flex items-start mb-4">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4feb8d6a-f93c-4e9b-94c6-111aa311abfc.png" alt="Avatar de usuário fictício - Personagem feminina com cabelo colorido rosa e azul" class="w-10 h-10 rounded-full mr-3">
+                    <div>
+                        <h3 class="font-medium">AnaSilva93</h3>
+                        <p class="text-gray-400 text-sm">analisou <a href="#" class="text-purple-300">Baldur's Gate 3</a></p>
+                    </div>
+                    <div class="ml-auto stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="bg-gray-900 p-4 rounded mb-3">
+                    <p>Depois de jogar BG3, outros RPGs parecem incompletos. A profundidade das histórias, a imensa liberdade de escolha e a atenção aos detalhes são impressionantes. Cada decisão importa, cada NPC tem personalidade. Jogo do ano sem dúvidas!</p>
+                </div>
+                <div class="flex items-center text-sm text-gray-400">
+                    <button class="flex items-center mr-4 hover:text-purple-300">
+                        <i class="far fa-thumbs-up mr-1"></i> 42
+                    </button>
+                    <button class="flex items-center mr-4 hover:text-purple-300">
+                        <i class="far fa-comment mr-1"></i> 7
+                    </button>
+                    <span>2 dias atrás</span>
+                </div>
+            </div>
+            
+            <div class="bg-gray-800 rounded-lg p-6">
+                <div class="flex items-start mb-4">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c5cfe952-3a54-457c-a827-276a2980bfd9.png" alt="Avatar de usuário fictício - Avatar masculino estilo cyberpunk com óculos de realidade virtual" class="w-10 h-10 rounded-full mr-3">
+                    <div>
+                        <h3 class="font-medium">CyberPunk2077</h3>
+                        <p class="text-gray-400 text-sm">analisou <a href="#" class="text-purple-300">Resident Evil 4</a></p>
+                    </div>
+                    <div class="ml-auto stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+                <div class="bg-gray-900 p-4 rounded mb-3">
+                    <p>O remake mantém a essência do original enquanto moderna tudo que precisava. Os gráficos são assustadoramente belos, o combate é visceral e a IA dos inimigos agora é realmente desafiadora. Minha única crítica é o modo Mercenaries não ter todas as versões dos personagens.</p>
+                </div>
+                <div class="flex items-center text-sm text-gray-400">
+                    <button class="flex items-center mr-4 hover:text-purple-300">
+                        <i class="far fa-thumbs-up mr-1"></i> 28
+                    </button>
+                    <button class="flex items-center mr-4 hover:text-purple-300">
+                        <i class="far fa-comment mr-1"></i> 3
+                    </button>
+                    <span>5 dias atrás</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-12 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 text-purple-400">GameFolio</h3>
+                    <p class="text-gray-400">Conecte-se com outros jogadores, documente suas experiências e descubra novos jogos.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-purple-300">Sobre</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-purple-300">Termos de Uso</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-purple-300">Política de Privacidade</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-purple-300">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Plataformas</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-purple-300">PC</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-purple-300">PlayStation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-purple-300">Xbox</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-purple-300">Nintendo</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Redes Sociais</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-purple-600">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-purple-600">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-purple-600">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-purple-600">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-500">
+                <p>© 2023 GameFolio. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Rating System
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simula o hover nas estrelas do rating
+            const starsContainers = document.querySelectorAll('.stars');
+            
+            starsContainers.forEach(container => {
+                const stars = container.querySelectorAll('i');
+                
+                stars.forEach((star, index) => {
+                    star.addEventListener('click', () => {
+                        // Remove todas as classes
+                        stars.forEach(s => {
+                            s.classList.remove('fas');
+                            s.classList.add('far');
+                        });
+                        
+                        // Ativa as estrelas até a clicada
+                        for (let i = 0; i <= index; i++) {
+                            stars[i].classList.remove('far');
+                            stars[i].classList.add('fas');
+                        }
+                    });
+                });
+            });
+            
+            // Filter buttons
+            const filterButtons = document.querySelectorAll('.bg-gray-800.rounded-full');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    filterButtons.forEach(btn => btn.classList.remove('active-filter'));
+                    this.classList.add('active-filter');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
