@@ -1,0 +1,13 @@
+.stars {
+    color: #ffd700;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(155, 81, 224, 0.3);
+}
+
+.active-filter {
+    background-color: #6b21a8;
+    color: white;
+}

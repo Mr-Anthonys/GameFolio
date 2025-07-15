@@ -6,19 +6,7 @@
     <title>GameFolio - Seu Diário de Jogos</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .stars {
-            color: #ffd700;
-        }
-        .game-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(155, 81, 224, 0.3);
-        }
-        .active-filter {
-            background-color: #6b21a8;
-            color: white;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gray-900 text-gray-100 min-h-screen">
     <!-- Navbar -->
@@ -65,6 +53,40 @@
 
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-8">
+        <!-- Add New Game Form -->
+        <section class="mb-12 bg-gray-800 p-6 rounded-lg">
+            <h2 class="text-2xl font-bold mb-4">Adicionar Novo Jogo</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Nome do Jogo -->
+                <input type="text" id="game-title" placeholder="Nome do Jogo" class="px-4 py-2 rounded bg-gray-900 text-white w-full">
+                <!-- Plataforma -->
+                <input type="text" id="game-platform" placeholder="Plataforma (ex: PC, PS5)" class="px-4 py-2 rounded bg-gray-900 text-white w-full">
+                <!-- Categoria -->
+                <input type="text" id="game-category" placeholder="Categoria (ex: RPG, Ação)" class="px-4 py-2 rounded bg-gray-900 text-white w-full">
+                <!-- Ano de lancamento -->
+                <input type="number" id="game-year" placeholder="Ano de Lançamento" class="px-4 py-2 rounded bg-gray-900 text-white w-full">
+                <!-- URL da Imagem -->
+                <input type="url" id="game-image" placeholder="URL da Imagem (opcional)" class="px-4 py-2 rounded bg-gray-900 text-white w-full">
+            </div>
+
+            <!-- Estrelas de avaliação -->
+            <div class="mt-4">
+                <span class="block text-sm mb-1">Avaliação:</span>
+                <div class="stars text-xl cursor-pointer space-x-1" id="new-rating">
+                    <i class="fa fa-star" data-value="1"></i>
+                    <i class="fa fa-star" data-value="2"></i>
+                    <i class="fa fa-star" data-value="3"></i>
+                    <i class="fa fa-star" data-value="4"></i>
+                    <i class="fa fa-star" data-value="5"></i>
+                </div>
+            </div>
+
+            <button id="add-game-btn" class="mt-6 bg-purple-600 hover:bg-purple-700 px-6 py-2 rounded font-medium">
+                Adicionar Jogo
+            </button>
+        </section>
+
+
         <!-- Filters -->
         <div class="mb-8 overflow-x-auto">
             <div class="flex space-x-2 pb-2">
@@ -334,43 +356,9 @@
         </div>
     </footer>
 
-    <script>
-        // Rating System
-        document.addEventListener('DOMContentLoaded', function() {
-            // Simula o hover nas estrelas do rating
-            const starsContainers = document.querySelectorAll('.stars');
-            
-            starsContainers.forEach(container => {
-                const stars = container.querySelectorAll('i');
-                
-                stars.forEach((star, index) => {
-                    star.addEventListener('click', () => {
-                        // Remove todas as classes
-                        stars.forEach(s => {
-                            s.classList.remove('fas');
-                            s.classList.add('far');
-                        });
-                        
-                        // Ativa as estrelas até a clicada
-                        for (let i = 0; i <= index; i++) {
-                            stars[i].classList.remove('far');
-                            stars[i].classList.add('fas');
-                        }
-                    });
-                });
-            });
-            
-            // Filter buttons
-            const filterButtons = document.querySelectorAll('.bg-gray-800.rounded-full');
-            
-            filterButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    filterButtons.forEach(btn => btn.classList.remove('active-filter'));
-                    this.classList.add('active-filter');
-                });
-            });
-        });
-    </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
 
