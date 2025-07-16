@@ -44,9 +44,17 @@ document.addEventListener('DOMContentLoaded', function() {
             rating: rating
         };
         
-        if (newGame.title != "" && newGame.platform != "" && newGame.category != "" && newGame.year != "" && newGame.image != "" && newGame.rating != "") {
+        if (newGame.title != "" && newGame.platform != "" && newGame.category != "" && newGame.year != "") {
             games.push(newGame);
             renderGames(); //Funcao para desenhar os cards
+
+            //Limpando inputs apos inserir card
+            titleInput.value = '';
+            platformInput.value = '';
+            categoryInput.value = '';
+            yearInput.value = '';
+            imageInput.value = '';
+            rating = newRating
         } else {
             alert('Preencha os campos!')
         }
