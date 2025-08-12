@@ -1,0 +1,17 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    min-width: 400px;
+    max-width: 600px;
+    padding: 20px;
+    gap: 40px;
+}

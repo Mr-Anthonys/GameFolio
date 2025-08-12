@@ -11,3 +11,12 @@
     background-color: #6b21a8;
     color: white;
 }
+
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
