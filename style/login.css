@@ -1,0 +1,41 @@
+:root {
+            --primary-color: #8a2be2;
+            --secondary-color: #9400d3;
+            --dark-color: #1a0022;
+            --text-light: #f3e6ff;
+            --text-dark: #333;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--dark-color), #2d0044);
+            background-size: contain;
+            width: 100vw;
+            padding: 20px;
+            font-family: 'Arial', sans-serif;
+            color: var(--text-light);
+        }
+
+
+        .main-container {
+            width: 100%;
+            max-width: 900px;
+            background-color: #200030;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(138, 43, 226, 0.3);
+            overflow: hidden;
+            border: 1px solid var(--primary-color);
+        }
+
+        /*CABEÇALHO*/
+        header {
+            width: 100%;
+            height: 10%;
+            background-color: transparent;
+
+            margin-top: -900px;
+        }
+
+
+        nav img {
+            width: 70px;
+        }
