@@ -1,27 +1,31 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="../style/login.css">
-    <title>Login & Cadastro</title>
+    <title>Entre na sua conta</title>
 </head>
-<body>
-    <nav class="">
-        <div class="">
-            <div class="">
-                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7b67bf7c-70f5-4aff-a1ca-98b3bf985ffc.png" alt="Ícone do GameFolio - um controle de videogame estilizado com coroa" class="">
+
+<body class="fundoPrincipalCor">
+    <header class="cabecalho">
+        <nav class="navigator">
+            <div class="logoTitulo">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7b67bf7c-70f5-4aff-a1ca-98b3bf985ffc.png" alt="Ícone do GameFolio - um controle de videogame estilizado com coroa" class="imgLogo">
                 <span class="">GameFolio</span>
             </div>
-            
-            <div class="">
-                <a href="#" class="">Explorar</a>
-                <a href="#" class="">Listas</a>
-                <a href="#" class="">Comunidade</a>
-                <a href="#" class="">Sobre</a>
+
+            <div class="menu-Items">
+                <a href="#">Explorar</a>
+                <a href="#">Listas</a>
+                <a href="#">Comunidade</a>
+                <a href="#">Sobre</a>
             </div>
-        </div>
-    </nav>
+            </div>
+        </nav>
+    </header>
 
 
 
@@ -29,14 +33,17 @@
         <div class="card-login">
             <h1>Acesse sua conta</h1>
             <p>Informe seu e-mail e senha para entrar</p>
-            E-mail <input type="email" name="email" id="emailLogin">
-            Senha <input type="password" name="password" id="passwordLogin">
-            <input type="checkbox" name="lembrarAcesso" id="lembrarAcesso"> Lembrar-me
-            <a href="#">Esqueceu sua senha?</a>
+            <input type="email" name="email" id="emailLogin">
+            <input type="password" name="password" id="passwordLogin">
+            <div class="lembrarEforgetSenha">
+                <input type="checkbox" name="lembrarAcesso" id="lembrarAcesso"> Lembrar-me
+                <a href="#">Esqueceu sua senha?</a>
+            </div>
             <Button class="entrarLogin" id="entrarLogin">Entrar</Button>
             Ainda não tem conta? <button>Cadastre-se</button>
         </div>
     </main>
 
 </body>
+
 </html>
