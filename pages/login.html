@@ -32,15 +32,26 @@
     <main class="main-container">
         <div class="card-login">
             <h1>Acesse sua conta</h1>
-            <p>Informe seu e-mail e senha para entrar</p>
-            <input type="email" name="email" id="emailLogin">
-            <input type="password" name="password" id="passwordLogin">
+            <div class="inputsLogin">
+                <input type="email" name="email" id="emailLogin" required>
+                <label for="email" class="labelInput">Email</label>
+            </div>
+            <div class="inputsLogin">
+                <input type="password" name="password" id="passwordLogin" required>
+                <label for="password" class="labelInput">Senha</label>
+            </div>
             <div class="lembrarEforgetSenha">
-                <input type="checkbox" name="lembrarAcesso" id="lembrarAcesso"> Lembrar-me
+                <section>
+                    <input type="checkbox" name="lembrarAcesso" id="lembrarAcesso">
+                    <p>Lembrar-me</p>
+                </section>
                 <a href="#">Esqueceu sua senha?</a>
             </div>
             <Button class="entrarLogin" id="entrarLogin">Entrar</Button>
-            Ainda não tem conta? <button>Cadastre-se</button>
+            <div class="dontHaveAccount">
+                <p>Não tem conta?</p>
+                <button class="cadastre-se">Cadastre-se</button>
+            </div>
         </div>
     </main>
 

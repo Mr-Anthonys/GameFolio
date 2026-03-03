@@ -13,7 +13,12 @@
 
 /* Estilos do site login */
 .fundoPrincipalCor {
-  background-color: var(--fundoPrincipal);
+  /* background-color: var(--fundoPrincipal); */
+  background: linear-gradient(
+    200deg,
+    var(--fundoNavBar),
+    var(--fundoPrincipal)
+  );
 }
 
 body {
@@ -84,12 +89,157 @@ body {
 }
 
 .card-login {
-  min-width: 400px;
-  max-width: 500px;
-  margin: 100px 0;
-
+  width: 400px;
+  padding: 30px;
+  margin-top: 4%;
   display: flex;
+  align-items: center;
   text-align: center;
   flex-direction: column;
   gap: 20px;
+
+  /* Estilos Card */
+  background: var(--fundoPrincipal);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  /* border: 1px solid rgba(255, 255, 255, 0.15); */
+  box-shadow:
+    0 0 20px rgba(123, 63, 228, 0.6),
+    0 0 40px rgba(92, 42, 138, 0.4);
+  border-radius: 20px;
+  color: #fff;
+
+  position: relative;
+  overflow: visible;
+}
+.card-login::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 22px;
+  background: linear-gradient(45deg, #3a1a5f, #6a2bd9, #a855f7, #3a1a5f);
+  background-size: 300% 300%;
+  animation:
+    neonMove 6s ease infinite,
+    neonPulse 2.5s ease-in-out infinite;
+  z-index: -1;
+  filter: blur(8px);
+}
+.card-login::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: #111827e3;
+  border-radius: 18px;
+  z-index: -1;
+}
+/* Animação */
+@keyframes neonMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Pulsação do glow */
+@keyframes neonPulse {
+  0%,
+  100% {
+    opacity: 0.8;
+    filter: blur(10px);
+  }
+  50% {
+    opacity: 1;
+    filter: blur(16px);
+  }
+}
+
+.card-login h1 {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+}
+
+.card-login p {
+  opacity: 0.8;
+  font-size: 1rem;
+}
+
+.inputsLogin {
+  position: relative;
+  width: 280px;
+}
+.inputsLogin input {
+  width: 100%;
+  padding: 10px 5px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+  outline: none;
+}
+.inputsLogin .labelInput {
+  position: absolute;
+  left: 5px;
+  top: 10px;
+  transition: 0.3s ease;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  pointer-events: none;
+}
+.inputsLogin input:focus + .labelInput,
+.inputsLogin input:valid + .labelInput {
+  top: -12px;
+  font-size: 12px;
+  color: #fff;
+}
+.inputsLogin input:focus {
+  border-bottom: 2px solid #3a1a5f;
+}
+
+.lembrarEforgetSenha {
+  display: flex;
+  width: 320px;
+  gap: 10px;
+  padding: 16px;
+  justify-content: space-between;
+}
+.lembrarEforgetSenha section {
+  width: 50%;
+}
+.lembrarEforgetSenha section p {
+  display: inline-block;
+}
+.lembrarEforgetSenha a {
+  text-decoration: none;
+  color: #fff;
+  opacity: 0.8;
+  font-size: 1rem;
+}
+
+.entrarLogin {
+  width: 150px;
+  padding: 6px;
+  color: #fff;
+  border: none;
+  background-color: #3a1a5f;
+}
+
+.dontHaveAccount {
+  display: flex;
+  gap: 20px;
+  justify-content: end;
+  align-items: center;
+  padding: 16px;
+  width: 320px;
+}
+.dontHaveAccount button {
+  width: 100px;
+  padding: 8px;
 }
